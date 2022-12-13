@@ -1,4 +1,4 @@
-# *Welcome Bois!*
+# Welcome to Hunter's Branch!
 
 Each day should have it's own folder named like so: `day-1`, `day-2`
 
