@@ -1,4 +1,4 @@
-# *Welcome Bois!*
+# Welcome to Brayden's Branch!
 
 Each day should have it's own folder named like so: `day-1`, `day-2`
 
@@ -7,4 +7,3 @@ Each day should have it's own folder named like so: `day-1`, `day-2`
 Join by private leaderboard code: `2448939-ddfe0003`
 
 - Happy Coding
-
