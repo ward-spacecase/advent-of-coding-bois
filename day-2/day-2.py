@@ -2,65 +2,67 @@
 totalPoints = 0
 
 # --- win/tie/loss functions ---
-def win(yourChoice):
+def rock(yourChoice):
 	global totalPoints
-	totalPoints += 6
-	print(yourChoice + " | win")
-	
-def tie(yourChoice):
+	totalPoints += 1
+	print(yourChoice + " | rock")
+
+def paper(yourChoice):
+	global totalPoints
+	totalPoints += 2
+	print(yourChoice + " | paper")
+
+def scissors(yourChoice):
 	global totalPoints
 	totalPoints += 3
-	print(yourChoice + " | tie")
-
-def loss(yourChoice):
-	print(yourChoice + " | loss")
+	print(yourChoice + " | scissors")
 
 # --- throw functions ---
-# you choose rock
-def throw_rock(oppChoice):
+# you choose loss
+def choose_loss(oppChoice):
 	global totalPoints
 	# add one for rock
-	totalPoints += 1
+	totalPoints += 0
 	# tie
 	if oppChoice == 'A':
-		tie("rock")
+		scissors("loss")
 	# loss
 	elif oppChoice == 'B':
-		loss("rock")
+		rock("loss")
 	# win
 	elif oppChoice == 'C':
-		win("rock")
+		paper("loss")
 
-# you choose paper
-def throw_paper(oppChoice):
+# you choose draw
+def choose_draw(oppChoice):
 	global totalPoints
 	# add 2 for paper
-	totalPoints += 2
-	# win
-	if oppChoice == 'A':
-		win("paper")
-	# tie
-	elif oppChoice == 'B':
-		tie("paper")
-	# loss
-	elif oppChoice == 'C':
-		loss("paper")
-
-
-# you choose scissors
-def throw_scissors(oppChoice):
-	global totalPoints
-	# add 3 for scissors
 	totalPoints += 3
 	# win
 	if oppChoice == 'A':
-		loss("scissors")
+		rock("draw")
 	# tie
 	elif oppChoice == 'B':
-		win("scissors")
+		paper("draw")
 	# loss
 	elif oppChoice == 'C':
-		tie("scissors")
+		scissors("draw")
+
+
+# you choose win
+def choose_win(oppChoice):
+	global totalPoints
+	# add 3 for scissors
+	totalPoints += 6
+	# win
+	if oppChoice == 'A':
+		paper("win")
+	# tie
+	elif oppChoice == 'B':
+		scissors("win")
+	# loss
+	elif oppChoice == 'C':
+		rock("win")
 
 
 # --- determine which throw function ---
@@ -68,13 +70,13 @@ def throw_scissors(oppChoice):
 def determine_throw(yourChoice, oppChoice):
 	# X is rock
 	if yourChoice == 'X':
-		throw_rock(oppChoice)
+		choose_loss(oppChoice)
 	# Y is paper
 	elif yourChoice == 'Y':
-		throw_paper(oppChoice)
+		choose_draw(oppChoice)
 	# Z is scissors
 	elif yourChoice == 'Z':
-		throw_scissors(oppChoice)
+		choose_win(oppChoice)
 	else:
 		# error if not {X, Y, Z}
 		raise Exception("Invalid choice, must be in {X, Y, Z}")
