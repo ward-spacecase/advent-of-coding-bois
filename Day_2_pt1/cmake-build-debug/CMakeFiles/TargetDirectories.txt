@@ -1,0 +1,3 @@
+/Users/kjstanding/CLionProjects/Advent of Code 22/Day_2_pt1/cmake-build-debug/CMakeFiles/Day_2_pt1.dir
+/Users/kjstanding/CLionProjects/Advent of Code 22/Day_2_pt1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/kjstanding/CLionProjects/Advent of Code 22/Day_2_pt1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
